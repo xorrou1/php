@@ -1,0 +1,83 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.page_picture,
+.catalog_pictures,
+.pictures_bloc,
+.form_button {
+    display: flex;
+}
+.catalog_pictures{
+    flex-grow: 2;
+    flex-basis: 70%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    /* width: 100vw; */
+}
+.pictures_bloc{
+    margin: 1rem;
+    height: 40vh;
+    width: 30%;
+    border: 2px black solid;
+    transition: all 0.5s ease-out ;
+    overflow: hidden;
+    z-index: 1;
+}
+.pictures_bloc:hover{
+    border: 3px rgb(95, 19, 19) solid;
+    border-radius: 20%;
+    transform: scale(1.2,1.2);
+}
+img{
+    min-width: 100%;
+    min-height: 100%;
+    flex-shrink: 0;
+}
+.form_button{
+    flex-grow: 1;
+    justify-content: center;
+}
+.form_button input{
+    height: 2rem;
+    align-self: flex-start;    
+    margin-top: 1rem;
+}
+
+.pictures_bloc__modal{
+    display: block;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    overflow: hidden;
+    padding: 100%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.5);
+    z-index: 3;
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.pictures_bloc__modal img{
+    border: 0.5rem rgb(18, 29, 13) solid;
+    border-radius: 10%;
+}
+.pictures_bloc__modal_fone{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0); /* Затемнение фона */
+    background-color: rgba(0,0,0,0.5); /* Полупрозрачное затемнение */
+    z-index: 2; /* Фон на нижнем слое */
+}
+
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
